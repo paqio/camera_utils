@@ -195,7 +195,7 @@ public class CameraUtilsPlugin implements MethodCallHandler, PluginRegistry.Acti
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         mediaFile = new File(mediaStorageDir.getPath() + File.separator + _CAPTURE_IMAGE_NAME + new SimpleDateFormat(Constants.TIMESTAMP_FORMAT).format(new Date()) + Constants.PNG);
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            uri = FileProvider.getUriForFile(activity, activity.getPackageName() + ".flutter.provider", mediaFile);
+            uri = FileProvider.getUriForFile(activity, activity.getPackageName() + ".fileProvider", mediaFile);
             Log.v(TAG, uri.toString());
 
         } else {
